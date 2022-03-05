@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  test:
+    image: alpine/bombardier
+#    entrypoint: ["bombardier","-c","1","-d","10s","-l","http://host.docker.internal:8090"]
+    command: -c 100 -d 10s -l http://host.docker.internal:8090
