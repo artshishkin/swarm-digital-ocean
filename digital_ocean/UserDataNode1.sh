@@ -4,6 +4,9 @@ ufw allow in on eth1 to any port 2377 proto tcp
 ufw allow in on eth1 to any port 7946
 ufw allow in on eth1 to any port 4789 proto udp
 
+apt-get update
+apt-get upgrade -y
+
 apt install docker.io -y
 service docker start
 #usermod -a -G docker ec2-user
