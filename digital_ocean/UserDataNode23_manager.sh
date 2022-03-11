@@ -12,5 +12,5 @@ service docker start
 #usermod -a -G docker ec2-user
 chkconfig docker on
 
-# You need to SSH into node1 and `docker swarm join-token worker` to get join-token
-docker swarm join --token SWMTKN-1-2dzpybdqtdvrrpx9ih6xpaozcka6mrzfghehq4vtl4mble3gbx-1xkkt5kyuc389bzfcx0yecxxi 10.114.0.2:2377
+# You need to SSH into node1 and `docker swarm join-token manager` to get join-token
+docker swarm join --token SWMTKN-1-0v5ew1zhpl0hbr5m3ery5dy0qpiwm7fgzq6etnbz9i13h2hfcn-4rwbfezn631047el0adjycwv0 10.106.0.2:2377
