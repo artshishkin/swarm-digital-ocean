@@ -21,3 +21,35 @@ Ukraine is under fire. Need help
 6. Test it
     -  use IP something like this
     -  http://134.122.71.93:8080
+
+####  Digital Ocean CLI Commands
+
+1.  Create droplet
+   - `doctl compute ssh-key list` -> find key-id by name `digital_ocean` -> 29507433
+   - `doctl compute droplet create m01 --region fra1 --image ubuntu-20-04-x64 --size s-1vcpu-1gb --ssh-keys 29507433 --user-data-file ./UserDataNode1.sh --enable-monitoring --tag-name manager --wait`
+   - got droplet id: `290263803`
+2. Add droplet to a project 
+   - `doctl projects list` -> find project MyWar -> `f6b34af8-7a39-44f5-b6df-bbb4cbb3372a`
+   - `doctl projects resources assign f6b34af8-7a39-44f5-b6df-bbb4cbb3372a --resource=do:droplet:290263803`
+3. SSH to a droplet
+   - `doctl compute ssh m01 --ssh-key-path ~\.ssh\digital_ocean`
+4. Get join token
+   - `docker swarm join-token manager`
+   - or
+   - `docker swarm join-token worker`
+   - update UserDataNode...
+5. Create droplets for managers
+   - `doctl compute droplet create --region fra1 --image ubuntu-20-04-x64 --size s-1vcpu-1gb --ssh-keys 29507433 --user-data-file ./UserDataNode23_manager.sh --enable-monitoring --tag-name manager m02`
+6. Create droplets for workers
+   - `doctl compute droplet create --region fra1 --image ubuntu-20-04-x64 --size s-1vcpu-1gb --ssh-keys 29507433 --user-data-file ./UserDataNode45_worker.sh --enable-monitoring --tag-name worker w01`
+7. Assign droplets to a project  
+   - `doctl projects resources assign f6b34af8-7a39-44f5-b6df-bbb4cbb3372a --resource=do:droplet:290268588` 
+8. Delete unused droplets
+   - `doctl compute droplet delete m01 -f`
+   
+
+
+
+
+
+
