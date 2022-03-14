@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+
+  bomb01:
+    image: portholeascend/mhddos_proxy:latest
+    command: -c https://pastebin.com/raw/PA2v2zEe
+    deploy:
+      replicas: 8
