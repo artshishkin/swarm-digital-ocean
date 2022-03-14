@@ -26,7 +26,7 @@ Ukraine is under fire. Need help
 
 1.  Create droplet
    - `doctl compute ssh-key list` -> find key-id by name `digital_ocean` -> 29507433
-   - `doctl compute droplet create m01 --region fra1 --image ubuntu-20-04-x64 --size s-1vcpu-1gb --ssh-keys 29507433 --user-data-file ./UserDataNode1.sh --enable-monitoring --tag-name manager --wait`
+   - `doctl compute droplet create m01 --region fra1 --image ubuntu-20-04-x64 --size s-1vcpu-2gb --ssh-keys 29507433 --user-data-file ./UserDataNode1.sh --enable-monitoring --tag-name manager --wait`
    - got droplet id: `290263803`
 2. Add droplet to a project 
    - `doctl projects list` -> find project MyWar -> `f6b34af8-7a39-44f5-b6df-bbb4cbb3372a`
@@ -39,15 +39,22 @@ Ukraine is under fire. Need help
    - `docker swarm join-token worker`
    - update UserDataNode...
 5. Create droplets for managers
-   - `doctl compute droplet create --region fra1 --image ubuntu-20-04-x64 --size s-1vcpu-1gb --ssh-keys 29507433 --user-data-file ./UserDataNode23_manager.sh --enable-monitoring --tag-name manager m02`
+   - `doctl compute droplet create --region fra1 --image ubuntu-20-04-x64 --size s-1vcpu-2gb --ssh-keys 29507433 --user-data-file ./UserDataNode23_manager.sh --enable-monitoring --tag-name manager m02`
 6. Create droplets for workers
-   - `doctl compute droplet create --region fra1 --image ubuntu-20-04-x64 --size s-1vcpu-1gb --ssh-keys 29507433 --user-data-file ./UserDataNode45_worker.sh --enable-monitoring --tag-name worker w01`
+   - `doctl compute droplet create --region fra1 --image ubuntu-20-04-x64 --size s-1vcpu-2gb --ssh-keys 29507433 --user-data-file ./UserDataNode45_worker.sh --enable-monitoring --tag-name worker w01`
 7. Assign droplets to a project  
    - `doctl projects resources assign f6b34af8-7a39-44f5-b6df-bbb4cbb3372a --resource=do:droplet:290268588` 
 8. Delete unused droplets
    - `doctl compute droplet delete m01 -f`
    
 
+####  Use another account
+
+1. Create another account
+   - `doctl auth init --context dima`
+   - enter token
+2. Switch to new account
+   - `doctl auth switch --context dima`
 
 
 

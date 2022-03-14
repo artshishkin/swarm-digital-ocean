@@ -13,4 +13,4 @@ service docker start
 chkconfig docker on
 
 # You need to SSH into node1 and `docker swarm join-token worker` to get join-token
-docker swarm join --token SWMTKN-1-4lob2op2pnfjsrnbrt3oqw4kjuwjezrgwnn64de000rk9wjw58-3o91kj7lufpb5ow5djzi6n801 10.114.0.3:2377
+docker swarm join --token SWMTKN-1-62z2blhf4qnp9j2pr1e7l286ksey44nmvfqhinzn37gnnbr2cb-btfm0ylgmo971d5jit3obt9ed 10.114.0.3:2377
