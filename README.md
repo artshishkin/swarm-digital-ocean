@@ -25,8 +25,8 @@ Ukraine is under fire. Need help
 ####  Digital Ocean CLI Commands
 
 1.  Create droplet
-   - `doctl compute ssh-key list` -> find key-id by name `digital_ocean` -> 29507433
-   - `doctl compute droplet create m01 --region fra1 --image ubuntu-20-04-x64 --size s-1vcpu-2gb --ssh-keys 29507433 --user-data-file ./UserDataNode1.sh --enable-monitoring --tag-name manager --wait`
+   - `doctl compute ssh-key list` -> find key-id by name `digital_ocean` -> 29507433 (92:08:4c:8d:76:ee:1a:7e:00:d9:d2:d3:eb:44:ab:94 - FingerPrint)
+   - `doctl compute droplet create m01 --region fra1 --image ubuntu-20-04-x64 --size s-1vcpu-2gb --ssh-keys 92:08:4c:8d:76:ee:1a:7e:00:d9:d2:d3:eb:44:ab:94 --user-data-file ./UserDataNode1.sh --enable-monitoring --tag-name manager --wait`
    - got droplet id: `290263803`
 2. Add droplet to a project 
    - `doctl projects list` -> find project MyWar -> `f6b34af8-7a39-44f5-b6df-bbb4cbb3372a`
@@ -56,6 +56,18 @@ Ukraine is under fire. Need help
 2. Switch to new account
    - `doctl auth switch --context dima`
 
+####  Kate's account
+
+1.  Create droplet
+   - `doctl compute ssh-key list` -> find key-id by name `digital_ocean` -> 92:08:4c:8d:76:ee:1a:7e:00:d9:d2:d3:eb:44:ab:94 (FingerPrint)
+   - `doctl compute droplet create m01 --region fra1 --image ubuntu-20-04-x64 --size s-2vcpu-4gb --ssh-keys 92:08:4c:8d:76:ee:1a:7e:00:d9:d2:d3:eb:44:ab:94 --user-data-file ./UserDataNode1.sh --enable-monitoring --tag-name manager --wait`
+2. SSH to a droplet
+   - `doctl compute ssh m01 --ssh-key-path ~\.ssh\digital_ocean`
+3. Get join token
+   - `docker swarm join-token manager`
+   - update UserDataNode... 
+4. Create droplets for managers
+   - `doctl compute droplet create --region fra1 --image ubuntu-20-04-x64 --size s-2vcpu-4gb --ssh-keys 92:08:4c:8d:76:ee:1a:7e:00:d9:d2:d3:eb:44:ab:94 --user-data-file ./UserDataNode23_manager.sh --enable-monitoring --tag-name manager m02`
 
 
 
