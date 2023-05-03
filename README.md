@@ -26,7 +26,7 @@ Ukraine is under fire. Need help
 
 1.  Create droplet
    - `doctl compute ssh-key list` -> find key-id by name `digital_ocean` -> 29507433 (92:08:4c:8d:76:ee:1a:7e:00:d9:d2:d3:eb:44:ab:94 - FingerPrint)
-   - `doctl compute droplet create m01 --region fra1 --image ubuntu-20-04-x64 --size s-1vcpu-2gb --ssh-keys 92:08:4c:8d:76:ee:1a:7e:00:d9:d2:d3:eb:44:ab:94 --user-data-file ./UserDataNode1.sh --enable-monitoring --tag-name manager --wait`
+   - `doctl compute droplet create m01 --region fra1 --image ubuntu-20-04-x64 --size s-1vcpu-2gb --ssh-keys 92:08:4c:8d:76:ee:1a:7e:00:d9:d2:d3:eb:44:ab:94 --user-data-file ./UserDataNode1_new.sh --enable-monitoring --tag-name manager --wait`
    - got droplet id: `290263803`
 2. Add droplet to a project 
    - `doctl projects list` -> find project MyWar -> `f6b34af8-7a39-44f5-b6df-bbb4cbb3372a`
